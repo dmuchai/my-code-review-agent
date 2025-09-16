@@ -3,6 +3,19 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "cli": "bun run cli.ts",
+    "review": "bun run index.ts",
+    "review:basic": "bun run cli.ts -t basic",
+    "review:full": "bun run cli.ts -t full",
+    "review:security": "bun run cli.ts -t security",
+    "review:performance": "bun run cli.ts -t performance",
+    "review:context": "bun run cli.ts -t context",
+    "commit-msg": "bun run cli.ts -t commit",
+    "dev": "bun --watch index.ts",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf reviews/*.md"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -11,6 +24,8 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^2.0.14",
-    "ai": "^5.0.44"
+    "ai": "^5.0.44",
+    "simple-git": "^3.28.0",
+    "zod": "^4.1.8"
   }
 }
